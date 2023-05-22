@@ -19,8 +19,26 @@ require_once __DIR__ . "/db.php";
   <title>PHP OOP Movie</title>
 </head>
 
-<body>
-
+<body class="bg-dark">
+  <h1 class="fw-bold text-white text-center my-5">Movies</h1>
+  <div class="container">
+    <div class="row row-cols-4">
+      <?php foreach ($movies as $movie) : ?>
+        <div class="col mb-5">
+          <div class="card rounded-0 p-2">
+            <div class="card-img">
+              <img class="img-fluid w-100" src="<?php echo $movie->poster ?>">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold"><?php echo $movie->title ?></h5>
+              <p class="card-text mb-1">Genre : <?php echo $movie->genre ?></p>
+              <p class="card-text">Duration : <?php echo $movie->getDuration() ?></p>
+            </div>
+          </div>
+        </div>
+      <?php endforeach ?>
+    </div>
+  </div>
 </body>
 
 </html>
