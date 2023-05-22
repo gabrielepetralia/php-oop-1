@@ -31,7 +31,14 @@ require_once __DIR__ . "/db.php";
             </div>
             <div class="card-body text-center">
               <h5 class="card-title fw-bold"><?php echo $movie->title ?></h5>
-              <p class="card-text mb-1">Genre : <?php echo $movie->genre ?></p>
+              <p class="card-text mb-1">Genre : 
+                <?php foreach ($movie->genres as $index=>$genre) {
+                  if($index != 0) {
+                    echo " / "; 
+                  }
+                  echo $genre; 
+                } ?>
+              </p>
               <p class="card-text">Duration : <?php echo $movie->getDuration() ?></p>
             </div>
           </div>

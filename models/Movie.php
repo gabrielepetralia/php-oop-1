@@ -3,14 +3,14 @@
 class Movie {
   public $poster;
   public $title;
-  public $genre;
+  public $genres;
   public $duration;
 
-  function __construct($_poster, $_title, $_genre, $_duration)
+  function __construct($_poster, $_title, $_genres, $_duration)
   {
     $this->poster = $_poster;
     $this->title = $_title;
-    $this->genre = $_genre;
+    $this->genres = $_genres;
     $this->duration = $_duration;
   }
 
